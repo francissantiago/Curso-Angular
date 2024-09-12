@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { MyComponentComponent } from './my-component.component';
+import { ProductsService } from '../services/products-service.service';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { MyComponentComponent } from './my-component.component';
     BrowserModule
   ],
   providers: [
+    ProductsService
   ],
   exports: [
     MyComponentComponent
