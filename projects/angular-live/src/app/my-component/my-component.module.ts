@@ -6,7 +6,7 @@ import { ProductsService } from '../services/products-service.service';
 
 @NgModule({
   declarations: [
-    MyComponentComponent
+    //MyComponentComponent
   ],
   imports: [
     BrowserModule
@@ -15,7 +15,7 @@ import { ProductsService } from '../services/products-service.service';
     ProductsService
   ],
   exports: [
-    MyComponentComponent
+    //MyComponentComponent
   ]
 })
 export class MyComponentModule { }
