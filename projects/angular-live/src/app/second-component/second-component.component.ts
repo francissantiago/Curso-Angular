@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-second-component',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrl: './second-component.component.scss'
 })
 export class SecondComponentComponent {
+  @Input('my-prop') myProp: string = '';
+  @Output() newItemEvent = new EventEmitter<string>();
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
+
+  handleClick(): void {
+    this.newItemEvent.emit("Oi paii!");
+  }
 
 }

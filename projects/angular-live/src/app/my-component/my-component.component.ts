@@ -19,9 +19,11 @@ export class MyComponentComponent implements OnInit {
   // Utilização do $ no nome da variável para fácil identificação de que se trata de um Observable
   productList$: Observable<Drink[]> = new Observable<Drink[]>();
 
+  teste = "MEU TEXTO DE TESTE"
+
   constructor(
     private productService: ProductsService
-  ){ }
+  ) { }
 
   ngOnInit(): void {
     this.productList$ = this.productService.fecthData('lemon').pipe(
@@ -31,5 +33,8 @@ export class MyComponentComponent implements OnInit {
     );
   }
 
-
+  handleEvent($event: string) {
+    console.log("evento aconteceu");
+    console.log("evento passado: ", $event);
+  }
 }

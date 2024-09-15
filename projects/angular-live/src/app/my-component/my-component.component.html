@@ -2,3 +2,5 @@
 <li *ngFor="let product of productList$ | async">
     {{ product.strDrink }}
 </li>
+
+<app-second-component [my-prop]="teste" (newItemEvent)="handleEvent($event)"></app-second-component>
