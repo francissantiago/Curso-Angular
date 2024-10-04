@@ -20,3 +20,10 @@
 <hr />
 <h2>Attribute Binding</h2>
 <p [attr.title]="name" [attr.aria-label]="name"> {{ name }}</p>
+
+<hr />
+<h2>Class and Style Binding</h2>
+<p [class.background-red]="age >= 33" [class.background-blue]="age < 33">
+    {{ name }}
+</p>
+<p [style.text-decoration]="isTextDecoration">{{ age }}</p>
