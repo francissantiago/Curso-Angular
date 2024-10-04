@@ -27,3 +27,11 @@
     {{ name }}
 </p>
 <p [style.text-decoration]="isTextDecoration">{{ age }}</p>
+
+<hr />
+<h2>Event binding</h2>
+<button (click)="sumEventBinding()">+</button>
+<button (click)="subEventBinding()">-</button>
+<input (keydown.shift.T)="onKeyDown($event)">
+
+<div style="background: red; width: 300px; height: 300px; margin-top: 10px;" (mousemove)="onMouseEvent($event)"></div>
