@@ -2,21 +2,29 @@
 <h3>IF</h3>
 
 <!-- Nova Forma -->
-@if(isTrue) {
-    <p>Francis</p>
-    <p>Amanda</p>
-} @else if(1 === 1) {
-    1 é === 1
+@if(loadingData$ | async; as data){
+<ul>
+    @for(item of data; track item){
+        <li>{{ item }}</li>
+    }
+</ul>
 } @else {
-    Não está correto
+    <p>Carregando...</p>
 }
 
+<!-- For sem IF  -->
+@for(item of loadingData$ | async; track item){
+    <li>{{ item }}</li>
+}
 
 <!-- Forma Antiga (precisa da importação do CommonModule) -->
-<ng-container *ngIf="isTrue; else isFalse">
-    <p>Francis</p>
-    <p>Amanda</p>
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn">
+            <li>{{ item }}</li>
+        </ng-container>
+    </ul>
 </ng-container>
-<ng-template #isFalse>
-    Não está correto
+<ng-template #loading>
+    <p>Carregando...</p>
 </ng-template>
