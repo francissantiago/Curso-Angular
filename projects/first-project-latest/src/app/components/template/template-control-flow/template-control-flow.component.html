@@ -2,58 +2,23 @@
 <h3>IF</h3>
 
 <!-- Nova Forma -->
-<!--
-index = posição dentro do array
-count = quantidade de itens no array
-first = primeiro elemento?
-last = último elemento?
-even = par
-odd = ímpar
--->
-@for (
-    item of itens; track item.name;
-    let i = $index;
-    let c = $count;
-    let f = $first;
-    let l = $last;
-    let e = $even;
-    let o = $odd;
-){
-    <p>{{ item.name }}</p>
-    <p>index - {{ i }}</p>
-    <p>count - {{ c }}</p>
-    <p>first - {{ f }}</p>
-    <p>last - {{ l }}</p>
-    <p>even - {{ e }}</p>
-    <p>odd - {{ o }}</p>
-}
+<ul>
+    @for (item of itens; track item.name) {
+        <li> {{item.name}} </li>
+    } @empty {
+        <li> Não contém valores </li>
+    }
+</ul>
 
-<hr>
+<!-- Forma Antiga -->
+ <ul>
+    <ng-container *ngIf="itens.length === 0; else itensExist">
+        <li> Não contém valores </li>
+    </ng-container>
 
-<input #name type="text">
-<button (click)="addNewName(name.value)">Add Name</button>
-
-<!-- Forma antiga -->
- <ng-container 
-    *ngFor="
-        let item of itens;
-        let i = index;
-        let c = count;
-        let f = first;
-        let l = last;
-        let e = even;
-        let o = odd;
-        trackBy: trackByFn
-    "
- >
-    <p>{{ item.name }}</p>
-    <p>index - {{ i }}</p>
-    <p>count - {{ c }}</p>
-    <p>first - {{ f }}</p>
-    <p>last - {{ l }}</p>
-    <p>even - {{ e }}</p>
-    <p>odd - {{ o }}</p>
-</ng-container>
-
-<input #name type="text">
-<button (click)="addNewName(name.value)">Add Name</button>
+    <ng-template #itensExist>
+        <ng-container *ngFor="let item of itens">
+            <li> {{ item.name }} </li>
+        </ng-container>
+    </ng-template>
+ </ul>
