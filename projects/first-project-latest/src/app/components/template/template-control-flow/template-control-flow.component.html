@@ -1,24 +1,32 @@
 <h2>Control Flow</h2>
-<h3>IF</h3>
+<h3>IF, FOR, SWITCH CASE</h3>
 
 <!-- Nova Forma -->
-<ul>
-    @for (item of itens; track item.name) {
-        <li> {{item.name}} </li>
-    } @empty {
-        <li> Não contém valores </li>
+@switch (switchCondition) {
+    @case('A') {
+        <p>Sim sua letra é: A</p>
     }
-</ul>
+
+    @case('B') {
+        <p>Sim sua letra é: B</p>
+    }
+
+    @default {
+        <p>Os dados não foram encontrados</p>
+    }
+}
 
 <!-- Forma Antiga -->
- <ul>
-    <ng-container *ngIf="itens.length === 0; else itensExist">
-        <li> Não contém valores </li>
+ <ng-container [ngSwitch]="switchCondition">
+    <ng-container *ngSwitchCase="'A'">
+        <p>Sim sua letra é: A</p>
     </ng-container>
 
-    <ng-template #itensExist>
-        <ng-container *ngFor="let item of itens">
-            <li> {{ item.name }} </li>
-        </ng-container>
-    </ng-template>
- </ul>
+    <ng-container *ngSwitchCase="'B'">
+        <p>Sim sua letra é: B</p>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+        <p>Os dados não foram encontrados</p>
+    </ng-container>
+ </ng-container>
