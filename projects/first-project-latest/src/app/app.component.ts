@@ -8,6 +8,7 @@ import { TemplateBindingComponent } from './components/template/template-binding
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
+import { TemplateDeferrableWhenComponent } from "./components/template/template-deferrable-views/template-deferrable-when/template-deferrable-when.component";
 
 @Component({
   selector: 'app-root',
@@ -19,15 +20,16 @@ import { TemplateDeferrableViewsComponent } from './components/template/template
     TemplateBindingComponent,
     TemplateVariablesComponent,
     TemplateControlFlowComponent,
-    TemplateDeferrableViewsComponent
-  ],
+    TemplateDeferrableViewsComponent,
+    TemplateDeferrableWhenComponent
+],
   template: `
   <!-- <router-outlet /> -->
   <!-- <app-template-binding /> -->
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
   <h1>Curso de Angular</h1>
-  <app-template-deferrable-views />
+  <app-template-deferrable-when />
   `,
 })
 export class AppComponent {
