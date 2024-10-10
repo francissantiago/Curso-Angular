@@ -1,0 +1,31 @@
+<!--
+ON: Especifica uma condição de acionador usando um acionador da lista.
+(
+    idle -> Quando a página está inativa, comportamento padrão do @defer
+    timer -> Carrega a página com um temporizador em segundos(xs) ou milissegundos(xxxxms)
+    viewport -> Carrega o componente quando o scroll chega na posição definida pelo estilo do mesmo
+    interaction -> Carrega quando existe uma interação direta com um elemento dentro do componente
+    hover -> Carrega quando o mouse passa(mouseEnter) sobre um elemento dentro do componente
+    immediate -> Quando a página já está carregada, comportamento padrão do @defer
+    prefetch -> Pré-carrega o elemento em segundo plano, deixando pronto para ser utilizado em alguma outra condição de acionador
+)
+
+WHEN: Especifica uma condição imperativa como uma expressão que retorna um booleano. Quando esta expressão se torna verdadeira, o espaço reservado é trocado
+pelo conteúdo carregado lentamente (o que pode ser uma operação assíncrona se as dependências precisarem ser buscadas) .
+
+Nota: Vários on triggers são sempre condições OR. Da mesma forma, ON misturado com WHEN também são condições OR.
+
+-->
+<h2 #trigger>Deferrable Views</h2>
+
+<h3>Placeholder</h3>
+@defer {
+    <app-new-component />
+} @placeholder(minimum 5s) {
+    <p>Assim como o timer, o placeholder pode ser configurado com segundos(s) ou milissegundos(ms)</p>
+} @loading {
+    <p>Loading...</p>
+} @error {
+    <p>Loading failed :(</p>
+
+}

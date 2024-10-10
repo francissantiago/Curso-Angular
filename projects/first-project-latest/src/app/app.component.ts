@@ -9,6 +9,7 @@ import { TemplateVariablesComponent } from './components/template/template-varia
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 import { TemplateDeferrableWhenComponent } from "./components/template/template-deferrable-views/template-deferrable-when/template-deferrable-when.component";
+import { TemplateDeferrablePlaceholderMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-placeholder-minimum/template-deferrable-placeholder-minimum.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { TemplateDeferrableWhenComponent } from "./components/template/template-
     TemplateVariablesComponent,
     TemplateControlFlowComponent,
     TemplateDeferrableViewsComponent,
-    TemplateDeferrableWhenComponent
+    TemplateDeferrableWhenComponent,
+    TemplateDeferrablePlaceholderMinimumComponent
 ],
   template: `
   <!-- <router-outlet /> -->
@@ -29,7 +31,7 @@ import { TemplateDeferrableWhenComponent } from "./components/template/template-
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
   <h1>Curso de Angular</h1>
-  <app-template-deferrable-when />
+  <app-template-deferrable-placeholder-minimum />
   `,
 })
 export class AppComponent {
