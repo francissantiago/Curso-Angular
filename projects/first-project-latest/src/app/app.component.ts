@@ -13,6 +13,7 @@ import { TemplateDeferrablePlaceholderMinimumComponent } from './components/temp
 import { TemplateDeferrableLoadingAfterMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-loading-after-minimum/template-deferrable-loading-after-minimum.component';
 import { TemplateDeferrableErrorComponent } from './components/template/template-deferrable-views/template-deferrable-error/template-deferrable-error.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
+import { SignalsEffectComponent } from './components/signals/signals-effect/signals-effect.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { SignalsComponent } from './components/signals/signals/signals.component
     TemplateDeferrablePlaceholderMinimumComponent,
     TemplateDeferrableLoadingAfterMinimumComponent,
     TemplateDeferrableErrorComponent,
-    SignalsComponent
+    SignalsComponent,
+    SignalsEffectComponent
 ],
   template: `
   <!-- <router-outlet /> -->
@@ -37,7 +39,7 @@ import { SignalsComponent } from './components/signals/signals/signals.component
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
   <h1>Curso de Angular</h1>
-  <app-signals />
+  <app-signals-effect />
   `,
 })
 export class AppComponent {
