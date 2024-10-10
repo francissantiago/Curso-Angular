@@ -12,6 +12,7 @@ import { TemplateDeferrableWhenComponent } from "./components/template/template-
 import { TemplateDeferrablePlaceholderMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-placeholder-minimum/template-deferrable-placeholder-minimum.component';
 import { TemplateDeferrableLoadingAfterMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-loading-after-minimum/template-deferrable-loading-after-minimum.component';
 import { TemplateDeferrableErrorComponent } from './components/template/template-deferrable-views/template-deferrable-error/template-deferrable-error.component';
+import { SignalsComponent } from './components/signals/signals/signals.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ import { TemplateDeferrableErrorComponent } from './components/template/template
     TemplateDeferrableWhenComponent,
     TemplateDeferrablePlaceholderMinimumComponent,
     TemplateDeferrableLoadingAfterMinimumComponent,
-    TemplateDeferrableErrorComponent
+    TemplateDeferrableErrorComponent,
+    SignalsComponent
 ],
   template: `
   <!-- <router-outlet /> -->
@@ -35,7 +37,7 @@ import { TemplateDeferrableErrorComponent } from './components/template/template
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
   <h1>Curso de Angular</h1>
-  <app-template-deferrable-error />
+  <app-signals />
   `,
 })
 export class AppComponent {
