@@ -14,6 +14,7 @@ import { TemplateDeferrableLoadingAfterMinimumComponent } from './components/tem
 import { TemplateDeferrableErrorComponent } from './components/template/template-deferrable-views/template-deferrable-error/template-deferrable-error.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
 import { SignalsEffectComponent } from './components/signals/signals-effect/signals-effect.component';
+import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pai-ou-mae/pai-ou-mae.component';
 
 @Component({
   selector: 'app-root',
@@ -31,15 +32,18 @@ import { SignalsEffectComponent } from './components/signals/signals-effect/sign
     TemplateDeferrableLoadingAfterMinimumComponent,
     TemplateDeferrableErrorComponent,
     SignalsComponent,
-    SignalsEffectComponent
+    SignalsEffectComponent,
+    PaiOuMaeComponent
 ],
   template: `
   <!-- <router-outlet /> -->
   <!-- <app-template-binding /> -->
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
+  <!-- <app-signals-effect /> -->
+
   <h1>Curso de Angular</h1>
-  <app-signals-effect />
+  <app-pai-ou-mae />
   `,
 })
 export class AppComponent {
