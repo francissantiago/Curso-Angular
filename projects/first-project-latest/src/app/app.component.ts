@@ -15,6 +15,7 @@ import { TemplateDeferrableErrorComponent } from './components/template/template
 import { SignalsComponent } from './components/signals/signals/signals.component';
 import { SignalsEffectComponent } from './components/signals/signals-effect/signals-effect.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pai-ou-mae/pai-ou-mae.component';
+import { PipesComponent } from './components/pipes/pipes/pipes.component';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,8 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pa
     TemplateDeferrableErrorComponent,
     SignalsComponent,
     SignalsEffectComponent,
-    PaiOuMaeComponent
+    PaiOuMaeComponent,
+    PipesComponent
 ],
   template: `
   <!-- <router-outlet /> -->
@@ -41,9 +43,10 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pa
   <!-- <app-template-variables /> -->
   <!-- <app-template-control-flow /> -->
   <!-- <app-signals-effect /> -->
+  <!-- <app-pai-ou-mae /> -->
 
   <h1>Curso de Angular</h1>
-  <app-pai-ou-mae />
+  <app-pipes />
   `,
 })
 export class AppComponent {
