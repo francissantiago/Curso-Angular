@@ -36,7 +36,7 @@ import { PipesComponent } from './components/pipes/pipes/pipes.component';
     SignalsEffectComponent,
     PaiOuMaeComponent,
     PipesComponent
-],
+  ],
   template: `
   <!-- <router-outlet /> -->
   <!-- <app-template-binding /> -->

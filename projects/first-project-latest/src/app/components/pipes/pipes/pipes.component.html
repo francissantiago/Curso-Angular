@@ -12,4 +12,14 @@
     <li>
         json: {{ json() | json }}
     </li>
+
+    <li>
+        currency: {{ 2000.5 | currency : "BRL" }}
+    </li>
+    <li>
+        number: {{ 2000.5544 | number : "1.1-4" }}
+    </li>
+    <li>
+        percent: {{ 0.155 | percent : "1.0-4" }}
+    </li>
 </ul>
