@@ -49,10 +49,10 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
   <!-- <app-signals-effect /> -->
   <!-- <app-pai-ou-mae /> -->
   <!-- <app-pipes /> -->
+  <!-- <app-template-driven-forms /> -->
 
   <h1>Curso de Angular</h1>
-  <app-template-driven-forms />
-  <!-- <app-reactive-forms /> -->
+  <app-reactive-forms />
   `,
 })
 export class AppComponent {
