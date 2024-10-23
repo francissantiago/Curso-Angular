@@ -1,10 +1,11 @@
+import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [JsonPipe, ReactiveFormsModule],
   templateUrl: './reactive-forms.component.html',
   styleUrl: './reactive-forms.component.scss'
 })
@@ -15,7 +16,6 @@ export class ReactiveFormsComponent {
 
   // Angular >= 17
   #fb = inject(FormBuilder);
-
 
   public profileForm = this.#fb.group({
     name: [''],
