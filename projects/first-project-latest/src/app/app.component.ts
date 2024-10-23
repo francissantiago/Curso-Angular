@@ -52,7 +52,7 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
 
   <h1>Curso de Angular</h1>
   <app-template-driven-forms />
-  <app-reactive-forms />
+  <!-- <app-reactive-forms /> -->
   `,
 })
 export class AppComponent {
