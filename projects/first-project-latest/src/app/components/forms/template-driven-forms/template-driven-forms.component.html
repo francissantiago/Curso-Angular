@@ -30,4 +30,17 @@
     <p>dirty: {{ sexo.dirty }}</p>
     <p>touched: {{ sexo.touched }}</p>
     <hr>
+
+    <!-- CHECKBOX -->
+    <label>
+        Angular:
+        <input type="checkbox" value="Angular" name="checkboxAngular" #techAngular="ngModel" [ngModel]="techAngular.value" required />
+    </label>
+
+    <hr>
+    <p>value: {{ techAngular.value }}</p>
+    <p>valid: {{ techAngular.valid }}</p>
+    <p>dirty: {{ techAngular.dirty }}</p>
+    <p>touched: {{ techAngular.touched }}</p>
+    <hr>
 </form>
