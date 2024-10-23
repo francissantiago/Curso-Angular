@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -15,6 +15,7 @@ export class ReactiveFormsComponent {
       front: new FormControl('Angular'),
       back: new FormControl('PHP')
     }),
+    myFavoriteFoods: new FormArray([new FormControl('X-tudo')])
   });
 
   public update() {
@@ -25,6 +26,13 @@ export class ReactiveFormsComponent {
         back: 'Python'
       },
     });
+  }
+
+  public addMyFavoriteFood(newFood: string) {
+    const myFavoriteFoods = this.profileForm.get('myFavoriteFoods') as FormArray;
+    const addNewFood = new FormControl(newFood);
+
+    myFavoriteFoods.push(addNewFood);
   }
 
 }
