@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -9,13 +9,22 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular
   styleUrl: './reactive-forms.component.scss'
 })
 export class ReactiveFormsComponent {
-  public profileForm = new FormGroup({
-    name: new FormControl(''),
-    myStacks: new FormGroup({
-      front: new FormControl('Angular'),
-      back: new FormControl('PHP')
+
+  // Angular < 17
+  // constructor(private _fb: FormBuilder) { }
+
+  // Angular >= 17
+  #fb = inject(FormBuilder);
+
+
+  public profileForm = this.#fb.group({
+    name: [''],
+    myStacks: this.#fb.group({
+      front: ['Angular'],
+      back: ['PHP']
     }),
-    myFavoriteFoods: new FormArray([new FormControl('X-tudo')])
+    myFavoriteFoods: this.#fb.array([['X-tudo']])
+    // myFavoriteFoods: this._fb.array([['X-tudo']]) Angular < 17
   });
 
   public update() {
