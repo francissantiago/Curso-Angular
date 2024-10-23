@@ -16,6 +16,8 @@ import { SignalsComponent } from './components/signals/signals/signals.component
 import { SignalsEffectComponent } from './components/signals/signals-effect/signals-effect.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pai-ou-mae/pai-ou-mae.component';
 import { PipesComponent } from './components/pipes/pipes/pipes.component';
+import { TemplateDrivenFormsComponent } from './components/forms/template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +37,9 @@ import { PipesComponent } from './components/pipes/pipes/pipes.component';
     SignalsComponent,
     SignalsEffectComponent,
     PaiOuMaeComponent,
-    PipesComponent
+    PipesComponent,
+    TemplateDrivenFormsComponent,
+    ReactiveFormsComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -44,9 +48,11 @@ import { PipesComponent } from './components/pipes/pipes/pipes.component';
   <!-- <app-template-control-flow /> -->
   <!-- <app-signals-effect /> -->
   <!-- <app-pai-ou-mae /> -->
+  <!-- <app-pipes /> -->
 
   <h1>Curso de Angular</h1>
-  <app-pipes />
+  <app-template-driven-forms />
+  <app-reactive-forms />
   `,
 })
 export class AppComponent {
