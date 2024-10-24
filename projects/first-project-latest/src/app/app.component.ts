@@ -18,6 +18,7 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pa
 import { PipesComponent } from './components/pipes/pipes/pipes.component';
 import { TemplateDrivenFormsComponent } from './components/forms/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
+import { ContentComponent } from './components/content/content.component';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
     PaiOuMaeComponent,
     PipesComponent,
     TemplateDrivenFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ContentComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -50,9 +52,20 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
   <!-- <app-pai-ou-mae /> -->
   <!-- <app-pipes /> -->
   <!-- <app-template-driven-forms /> -->
+  <!-- <app-reactive-forms /> -->
 
   <h1>Curso de Angular</h1>
-  <app-reactive-forms />
+  <app-content>
+    <header id="header">
+      <p>Header</p>
+    </header>
+    <p text>Text 1</p>
+    <p text2>Text 2</p>
+    <p text3>Text 3</p>
+    <footer class="footer">
+      <p>Footer</p>
+    </footer>
+  </app-content>
   `,
 })
 export class AppComponent {
