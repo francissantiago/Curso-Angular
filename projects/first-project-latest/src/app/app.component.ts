@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // Components
@@ -23,6 +23,7 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
 import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-init/on-change-on-init.component';
 import { DoCheckComponent } from './components/life-cycle/do-check/do-check.component';
 import { AfterViewInitComponent } from './components/life-cycle/after-view-init/after-view-init.component';
+import { AfterContentInitComponent } from './components/life-cycle/after-content-init/after-content-init.component';
 
 @Component({
   selector: 'app-root',
@@ -49,7 +50,8 @@ import { AfterViewInitComponent } from './components/life-cycle/after-view-init/
     HostElementsComponent,
     OnChangeOnInitComponent,
     DoCheckComponent,
-    AfterViewInitComponent
+    AfterViewInitComponent,
+    AfterContentInitComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -75,15 +77,15 @@ import { AfterViewInitComponent } from './components/life-cycle/after-view-init/
   <!-- <app-host-elements /> -->
   <!-- <app-on-change-on-init [myNumber]="number" /> -->
   <!-- <app-do-check [myNumber]="number" /> -->
+  <!-- <app-after-view-init [myNumber]="number" /> -->
   
   <h1>Curso de Angular</h1>
-  <app-after-view-init [myNumber]="number" />
+  <app-after-content-init [myNumber]="number">
+    <p #text>Text</p>
+  </app-after-content-init>
   `,
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   public number = 1;
 
-  ngOnInit(): void {
-    
-  }
 }
