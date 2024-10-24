@@ -21,6 +21,7 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
 import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-init/on-change-on-init.component';
+import { DoCheckComponent } from './components/life-cycle/do-check/do-check.component';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +46,8 @@ import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-in
     ReactiveFormsComponent,
     ContentComponent,
     HostElementsComponent,
-    OnChangeOnInitComponent
+    OnChangeOnInitComponent,
+    DoCheckComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -69,15 +71,16 @@ import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-in
     </footer>
   </app-content> -->
   <!-- <app-host-elements /> -->
+  <!-- <app-on-change-on-init [myNumber]="number" /> -->
   
   <h1>Curso de Angular</h1>
-  <app-on-change-on-init [myNumber]="number" />
+  <app-do-check [myNumber]="number" />
   `,
 })
 export class AppComponent implements OnInit{
   public number = 1;
 
   ngOnInit(): void {
-    setInterval(() => { this.number++; }, 1000);
+    
   }
 }
