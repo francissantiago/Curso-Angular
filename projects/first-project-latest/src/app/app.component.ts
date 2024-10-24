@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // Components
@@ -26,6 +26,7 @@ import { AfterViewInitComponent } from './components/life-cycle/after-view-init/
 import { AfterContentInitComponent } from './components/life-cycle/after-content-init/after-content-init.component';
 import { AfterContentCheckedComponent } from './components/life-cycle/after-content-checked/after-content-checked.component';
 import { OnDestroyComponent } from './components/life-cycle/on-destroy/on-destroy.component';
+import { ChangeDetectionComponent } from './components/life-cycle/change-detection/change-detection.component';
 
 @Component({
   selector: 'app-root',
@@ -55,7 +56,8 @@ import { OnDestroyComponent } from './components/life-cycle/on-destroy/on-destro
     AfterViewInitComponent,
     AfterContentInitComponent,
     AfterContentCheckedComponent,
-    OnDestroyComponent
+    OnDestroyComponent,
+    ChangeDetectionComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -88,19 +90,33 @@ import { OnDestroyComponent } from './components/life-cycle/on-destroy/on-destro
   <!-- <app-after-content-checked [myNumber]="number">
     <p #text>Text</p>
   </app-after-content-checked> -->
-  
-  <h1>Curso de Angular</h1>
-  @if(boolean){
+  <!-- @if(boolean){
     <app-on-destroy [myNumber]="number">
       <p #text>Text</p>
     </app-on-destroy>
+  } -->
+  
+  <h1>Curso de Angular</h1>
+
+  @if(boolean){
+    <app-change-detection [inputMyNumber]="number()">
+      <p #text>Text</p>
+    </app-change-detection>
   }
 
   <button (click)="boolean = !boolean">Destroy Component</button>
   `,
 })
-export class AppComponent {
-  public number = 1;
+export class AppComponent implements OnInit {
+  public number = signal(1);
   public boolean = true;
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.number.update((oldValue) => {
+        return oldValue + 1
+      });
+    }, 1000);
+  }
 
 }
