@@ -22,6 +22,7 @@ import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
 import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-init/on-change-on-init.component';
 import { DoCheckComponent } from './components/life-cycle/do-check/do-check.component';
+import { AfterViewInitComponent } from './components/life-cycle/after-view-init/after-view-init.component';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +48,8 @@ import { DoCheckComponent } from './components/life-cycle/do-check/do-check.comp
     ContentComponent,
     HostElementsComponent,
     OnChangeOnInitComponent,
-    DoCheckComponent
+    DoCheckComponent,
+    AfterViewInitComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -72,9 +74,10 @@ import { DoCheckComponent } from './components/life-cycle/do-check/do-check.comp
   </app-content> -->
   <!-- <app-host-elements /> -->
   <!-- <app-on-change-on-init [myNumber]="number" /> -->
+  <!-- <app-do-check [myNumber]="number" /> -->
   
   <h1>Curso de Angular</h1>
-  <app-do-check [myNumber]="number" />
+  <app-after-view-init [myNumber]="number" />
   `,
 })
 export class AppComponent implements OnInit{
