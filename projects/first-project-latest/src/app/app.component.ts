@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+// Environment
+import { environment } from 'environments/environment';
 
 // Components
 import { NewComponent } from "@components/new-component/new-component.component";
@@ -95,28 +98,21 @@ import { ChangeDetectionComponent } from '@components/life-cycle/change-detectio
       <p #text>Text</p>
     </app-on-destroy>
   } -->
-  
-  <h1>Curso de Angular</h1>
-
-  @if(boolean){
+  <!-- @if(boolean){
     <app-change-detection [inputMyNumber]="number()">
       <p #text>Text</p>
     </app-change-detection>
   }
 
-  <button (click)="boolean = !boolean">Destroy Component</button>
+  <button (click)="boolean = !boolean">Destroy Component</button> -->
+  
+  <h1>Curso de Angular</h1>
+
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
-  public number = signal(1);
-  public boolean = true;
-
-  ngOnInit(): void {
-    setInterval(() => {
-      this.number.update((oldValue) => {
-        return oldValue + 1
-      });
-    }, 1000);
+export class AppComponent {
+  constructor() {
+    console.log(environment)
   }
-
 }
