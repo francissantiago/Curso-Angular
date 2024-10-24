@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
-import { CustomStringPipe } from '../../../pipes/custom-string.pipe';
+import { CustomStringPipe } from '@pipes/custom-string.pipe';
 
 
 

@@ -3,30 +3,30 @@ import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // Components
-import { NewComponent } from "./components/new-component/new-component.component";
-import { TemplateBindingComponent } from './components/template/template-binding/template-binding.component';
-import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
-import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
-import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
-import { TemplateDeferrableWhenComponent } from "./components/template/template-deferrable-views/template-deferrable-when/template-deferrable-when.component";
-import { TemplateDeferrablePlaceholderMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-placeholder-minimum/template-deferrable-placeholder-minimum.component';
-import { TemplateDeferrableLoadingAfterMinimumComponent } from './components/template/template-deferrable-views/template-deferrable-loading-after-minimum/template-deferrable-loading-after-minimum.component';
-import { TemplateDeferrableErrorComponent } from './components/template/template-deferrable-views/template-deferrable-error/template-deferrable-error.component';
-import { SignalsComponent } from './components/signals/signals/signals.component';
-import { SignalsEffectComponent } from './components/signals/signals-effect/signals-effect.component';
-import { PaiOuMaeComponent } from './components/comunicacao-entre-componentes/pai-ou-mae/pai-ou-mae.component';
-import { PipesComponent } from './components/pipes/pipes/pipes.component';
-import { TemplateDrivenFormsComponent } from './components/forms/template-driven-forms/template-driven-forms.component';
-import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
-import { ContentComponent } from './components/content/content.component';
-import { HostElementsComponent } from './components/host-elements/host-elements.component';
-import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-init/on-change-on-init.component';
-import { DoCheckComponent } from './components/life-cycle/do-check/do-check.component';
-import { AfterViewInitComponent } from './components/life-cycle/after-view-init/after-view-init.component';
-import { AfterContentInitComponent } from './components/life-cycle/after-content-init/after-content-init.component';
-import { AfterContentCheckedComponent } from './components/life-cycle/after-content-checked/after-content-checked.component';
-import { OnDestroyComponent } from './components/life-cycle/on-destroy/on-destroy.component';
-import { ChangeDetectionComponent } from './components/life-cycle/change-detection/change-detection.component';
+import { NewComponent } from "@components/new-component/new-component.component";
+import { TemplateBindingComponent } from '@components/template/template-binding/template-binding.component';
+import { TemplateVariablesComponent } from '@components/template/template-variables/template-variables.component';
+import { TemplateControlFlowComponent } from '@components/template/template-control-flow/template-control-flow.component';
+import { TemplateDeferrableViewsComponent } from '@components/template/template-deferrable-views/template-deferrable-views.component';
+import { TemplateDeferrableWhenComponent } from "@components/template/template-deferrable-views/template-deferrable-when/template-deferrable-when.component";
+import { TemplateDeferrablePlaceholderMinimumComponent } from '@components/template/template-deferrable-views/template-deferrable-placeholder-minimum/template-deferrable-placeholder-minimum.component';
+import { TemplateDeferrableLoadingAfterMinimumComponent } from '@components/template/template-deferrable-views/template-deferrable-loading-after-minimum/template-deferrable-loading-after-minimum.component';
+import { TemplateDeferrableErrorComponent } from '@components/template/template-deferrable-views/template-deferrable-error/template-deferrable-error.component';
+import { SignalsComponent } from '@components/signals/signals/signals.component';
+import { SignalsEffectComponent } from '@components/signals/signals-effect/signals-effect.component';
+import { PaiOuMaeComponent } from '@components/comunicacao-entre-componentes/pai-ou-mae/pai-ou-mae.component';
+import { PipesComponent } from '@components/pipes/pipes/pipes.component';
+import { TemplateDrivenFormsComponent } from '@components/forms/template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from '@components/forms/reactive-forms/reactive-forms.component';
+import { ContentComponent } from '@components/content/content.component';
+import { HostElementsComponent } from '@components/host-elements/host-elements.component';
+import { OnChangeOnInitComponent } from '@components/life-cycle/on-change-on-init/on-change-on-init.component';
+import { DoCheckComponent } from '@components/life-cycle/do-check/do-check.component';
+import { AfterViewInitComponent } from '@components/life-cycle/after-view-init/after-view-init.component';
+import { AfterContentInitComponent } from '@components/life-cycle/after-content-init/after-content-init.component';
+import { AfterContentCheckedComponent } from '@components/life-cycle/after-content-checked/after-content-checked.component';
+import { OnDestroyComponent } from '@components/life-cycle/on-destroy/on-destroy.component';
+import { ChangeDetectionComponent } from '@components/life-cycle/change-detection/change-detection.component';
 
 @Component({
   selector: 'app-root',
