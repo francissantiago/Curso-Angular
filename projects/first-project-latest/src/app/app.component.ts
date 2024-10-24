@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // Components
@@ -20,6 +20,7 @@ import { TemplateDrivenFormsComponent } from './components/forms/template-driven
 import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
 import { ContentComponent } from './components/content/content.component';
 import { HostElementsComponent } from './components/host-elements/host-elements.component';
+import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-init/on-change-on-init.component';
 
 @Component({
   selector: 'app-root',
@@ -43,7 +44,8 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     ContentComponent,
-    HostElementsComponent
+    HostElementsComponent,
+    OnChangeOnInitComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -66,11 +68,16 @@ import { HostElementsComponent } from './components/host-elements/host-elements.
       <p>Footer</p>
     </footer>
   </app-content> -->
+  <!-- <app-host-elements /> -->
   
   <h1>Curso de Angular</h1>
-  <app-host-elements />
+  <app-on-change-on-init [myNumber]="number" />
   `,
 })
-export class AppComponent {
-  title = 'first-project-latest';
+export class AppComponent implements OnInit{
+  public number = 1;
+
+  ngOnInit(): void {
+    setInterval(() => { this.number++; }, 1000);
+  }
 }
