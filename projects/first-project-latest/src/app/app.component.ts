@@ -19,6 +19,7 @@ import { PipesComponent } from './components/pipes/pipes/pipes.component';
 import { TemplateDrivenFormsComponent } from './components/forms/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
 import { ContentComponent } from './components/content/content.component';
+import { HostElementsComponent } from './components/host-elements/host-elements.component';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,8 @@ import { ContentComponent } from './components/content/content.component';
     PipesComponent,
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
-    ContentComponent
+    ContentComponent,
+    HostElementsComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -53,9 +55,7 @@ import { ContentComponent } from './components/content/content.component';
   <!-- <app-pipes /> -->
   <!-- <app-template-driven-forms /> -->
   <!-- <app-reactive-forms /> -->
-
-  <h1>Curso de Angular</h1>
-  <app-content>
+  <!-- <app-content>
     <header id="header">
       <p>Header</p>
     </header>
@@ -65,7 +65,10 @@ import { ContentComponent } from './components/content/content.component';
     <footer class="footer">
       <p>Footer</p>
     </footer>
-  </app-content>
+  </app-content> -->
+  
+  <h1>Curso de Angular</h1>
+  <app-host-elements />
   `,
 })
 export class AppComponent {
