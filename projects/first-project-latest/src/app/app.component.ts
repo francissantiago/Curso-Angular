@@ -25,6 +25,7 @@ import { DoCheckComponent } from './components/life-cycle/do-check/do-check.comp
 import { AfterViewInitComponent } from './components/life-cycle/after-view-init/after-view-init.component';
 import { AfterContentInitComponent } from './components/life-cycle/after-content-init/after-content-init.component';
 import { AfterContentCheckedComponent } from './components/life-cycle/after-content-checked/after-content-checked.component';
+import { OnDestroyComponent } from './components/life-cycle/on-destroy/on-destroy.component';
 
 @Component({
   selector: 'app-root',
@@ -53,7 +54,8 @@ import { AfterContentCheckedComponent } from './components/life-cycle/after-cont
     DoCheckComponent,
     AfterViewInitComponent,
     AfterContentInitComponent,
-    AfterContentCheckedComponent
+    AfterContentCheckedComponent,
+    OnDestroyComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -83,14 +85,22 @@ import { AfterContentCheckedComponent } from './components/life-cycle/after-cont
   <!-- <app-after-content-init [myNumber]="number">
     <p #text>Text</p>
   </app-after-content-init> -->
+  <!-- <app-after-content-checked [myNumber]="number">
+    <p #text>Text</p>
+  </app-after-content-checked> -->
   
   <h1>Curso de Angular</h1>
-  <app-after-content-checked [myNumber]="number">
-    <p #text>Text</p>
-  </app-after-content-checked>
+  @if(boolean){
+    <app-on-destroy [myNumber]="number">
+      <p #text>Text</p>
+    </app-on-destroy>
+  }
+
+  <button (click)="boolean = !boolean">Destroy Component</button>
   `,
 })
 export class AppComponent {
   public number = 1;
+  public boolean = true;
 
 }
