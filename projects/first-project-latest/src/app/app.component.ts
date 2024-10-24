@@ -24,6 +24,7 @@ import { OnChangeOnInitComponent } from './components/life-cycle/on-change-on-in
 import { DoCheckComponent } from './components/life-cycle/do-check/do-check.component';
 import { AfterViewInitComponent } from './components/life-cycle/after-view-init/after-view-init.component';
 import { AfterContentInitComponent } from './components/life-cycle/after-content-init/after-content-init.component';
+import { AfterContentCheckedComponent } from './components/life-cycle/after-content-checked/after-content-checked.component';
 
 @Component({
   selector: 'app-root',
@@ -51,7 +52,8 @@ import { AfterContentInitComponent } from './components/life-cycle/after-content
     OnChangeOnInitComponent,
     DoCheckComponent,
     AfterViewInitComponent,
-    AfterContentInitComponent
+    AfterContentInitComponent,
+    AfterContentCheckedComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -78,11 +80,14 @@ import { AfterContentInitComponent } from './components/life-cycle/after-content
   <!-- <app-on-change-on-init [myNumber]="number" /> -->
   <!-- <app-do-check [myNumber]="number" /> -->
   <!-- <app-after-view-init [myNumber]="number" /> -->
+  <!-- <app-after-content-init [myNumber]="number">
+    <p #text>Text</p>
+  </app-after-content-init> -->
   
   <h1>Curso de Angular</h1>
-  <app-after-content-init [myNumber]="number">
+  <app-after-content-checked [myNumber]="number">
     <p #text>Text</p>
-  </app-after-content-init>
+  </app-after-content-checked>
   `,
 })
 export class AppComponent {
