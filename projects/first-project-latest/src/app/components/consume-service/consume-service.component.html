@@ -1,9 +1,11 @@
 <h2>Services</h2>
 
 <ul>
-    @for (item of getTask(); track item) {
+    @for (item of getTask$ | async; track item) {
     <li> {{ item.id }} - {{ item.title }} </li>
     } @empty {
     <li>Loading...</li>
     }
 </ul>
+
+<!-- {{ getTask$ | async | json }} -->
