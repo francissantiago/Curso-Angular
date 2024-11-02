@@ -1,2 +1,9 @@
 <h2>Services</h2>
-<app-new-component />
+
+<ul>
+    @for (item of getTask(); track item) {
+    <li> {{ item.id }} - {{ item.title }} </li>
+    } @empty {
+    <li>Loading...</li>
+    }
+</ul>

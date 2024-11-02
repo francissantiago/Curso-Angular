@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { NewComponent } from '@components/new-component/new-component.component';
 import { ApiService } from 'app/services/api.service';
 
 @Component({
   selector: 'app-consume-service',
   standalone: true,
-  imports: [CommonModule, NewComponent],
+  imports: [CommonModule],
   templateUrl: './consume-service.component.html',
   styleUrl: './consume-service.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -15,31 +15,21 @@ export class ConsumeServiceComponent implements OnInit {
   // Angular >= 17
   #apiService = inject(ApiService);
 
-  // Angular < 17
-  // constructor(
-  //   private _apiService: ApiService
-  // ){}
+  public getTask = signal<null | Array<{
+    id: string;
+    title: string;
+  }>>(null);
 
   ngOnInit(): void {
-    // Angular >= 17
     // Consome Serviço
-    console.log(this.#apiService.name());
-
-    // Atualiza o valor
-    this.#apiService.name.set('Francis Santiago 2')
-    setTimeout(() => {
-      console.log(this.#apiService.name())
-    }, 2000);
-
-    // Angular < 17
-    // Consome Serviço
-    this.#apiService.name$.subscribe({
-      next: (next) => console.log(next),
+    this.#apiService.httpListTask$().subscribe({
+      next: (next) => {
+        console.log(next);
+        this.getTask.set(next);
+      },
       error: (error) => console.log(error),
-      complete: () => console.log("complete!"),
+      complete: () => console.log("Complete!"),
     });
 
-    // Atualiza o valor
-    this.#apiService.name$.next('Francis Santiago $$');
   }
 }
