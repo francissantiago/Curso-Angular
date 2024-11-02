@@ -30,6 +30,7 @@ import { AfterContentInitComponent } from '@components/life-cycle/after-content-
 import { AfterContentCheckedComponent } from '@components/life-cycle/after-content-checked/after-content-checked.component';
 import { OnDestroyComponent } from '@components/life-cycle/on-destroy/on-destroy.component';
 import { ChangeDetectionComponent } from '@components/life-cycle/change-detection/change-detection.component';
+import { ConsumeServiceComponent } from '@components/consume-service/consume-service.component';
 
 @Component({
   selector: 'app-root',
@@ -60,7 +61,8 @@ import { ChangeDetectionComponent } from '@components/life-cycle/change-detectio
     AfterContentInitComponent,
     AfterContentCheckedComponent,
     OnDestroyComponent,
-    ChangeDetectionComponent
+    ChangeDetectionComponent,
+    ConsumeServiceComponent
   ],
   template: `
   <!-- <router-outlet /> -->
@@ -107,6 +109,7 @@ import { ChangeDetectionComponent } from '@components/life-cycle/change-detectio
   <button (click)="boolean = !boolean">Destroy Component</button> -->
   
   <h1>Curso de Angular</h1>
+  <app-consume-service />
 
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,16 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { NewComponent } from '@components/new-component/new-component.component';
 import { ApiService } from 'app/services/api.service';
 
 @Component({
-  selector: 'app-new-component',
+  selector: 'app-consume-service',
   standalone: true,
-  imports: [],
-  templateUrl: './new-component.component.html',
-  styleUrl: './new-component.component.scss'
+  imports: [CommonModule, NewComponent],
+  templateUrl: './consume-service.component.html',
+  styleUrl: './consume-service.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NewComponent {
-  public name = 'New Component';
-
+export class ConsumeServiceComponent implements OnInit {
   // Angular >= 17
   #apiService = inject(ApiService);
 
@@ -41,5 +42,4 @@ export class NewComponent {
     // Atualiza o valor
     this.#apiService.name$.next('Francis Santiago $$');
   }
-
 }
