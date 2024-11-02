@@ -15,23 +15,9 @@ export class ConsumeServiceComponent implements OnInit {
   // Angular >= 17
   #apiService = inject(ApiService);
 
-  public getTask = signal<null | Array<{
-    id: string;
-    title: string;
-  }>>(null);
-
-  public getTask$ = this.#apiService.httpListTask$();
+  public getListTask = this.#apiService.getListTask;
 
   ngOnInit(): void {
-    // Consome Serviço
-    this.getTask$.subscribe({
-      next: (next) => {
-        console.log(next);
-        this.getTask.set(next);
-      },
-      error: (error) => console.log(error),
-      complete: () => console.log("Complete!"),
-    });
-
+    this.#apiService.httpListTask$().subscribe();
   }
 }
