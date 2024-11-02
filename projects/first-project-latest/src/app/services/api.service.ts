@@ -13,7 +13,6 @@ interface ITask {
 })
 export class ApiService {
 
-
   // Angular >= 17
   public name = signal('Francis Santiago');
 
@@ -30,12 +29,26 @@ export class ApiService {
   #url = signal(environment.apiTask)
 
   #setListTask = signal<ITask[] | null>(null);
-  public getListTask = this.#setListTask.asReadonly();
+  get getListTask() {
+    return this.#setListTask.asReadonly();
+  }
 
   public httpListTask$(): Observable<ITask[]> {
     return this.#http.get<ITask[]>(this.#url()).pipe(
       shareReplay(),
       tap((res) => this.#setListTask.set(res))
+    );
+  }
+
+  #setTaskId = signal<ITask | null>(null);
+  get getTaskId() {
+    return this.#setTaskId.asReadonly();
+  }
+
+  public httpTaskId$(id: string): Observable<ITask> {
+    return this.#http.get<ITask>(`${this.#url()}/${id}`).pipe(
+      shareReplay(),
+      tap((res) => this.#setTaskId.set(res))
     );
   }
 }
