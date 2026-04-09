@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signals-effect',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './signals-effect.component.html',
   styleUrl: './signals-effect.component.scss'
 })

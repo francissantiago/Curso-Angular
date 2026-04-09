@@ -1,6 +1,8 @@
 <p>Olá, meu componente!</p>
-<li *ngFor="let product of productList$ | async">
+@for (product of productList$ | async; track product) {
+  <li>
     {{ product.strDrink }}
-</li>
+  </li>
+}
 
 <app-second-component [my-prop]="teste" (newItemEvent)="handleEvent($event)"></app-second-component>

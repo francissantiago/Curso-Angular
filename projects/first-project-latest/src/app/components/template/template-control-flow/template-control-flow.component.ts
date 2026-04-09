@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-template-control-flow',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './template-control-flow.component.html',
   styleUrl: './template-control-flow.component.scss'
 })

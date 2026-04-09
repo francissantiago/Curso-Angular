@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -36,7 +36,6 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
     RouterOutlet,
     NewComponent,
     TemplateBindingComponent,
@@ -63,7 +62,7 @@ import { ConsumeServiceComponent } from '@components/consume-service/consume-ser
     OnDestroyComponent,
     ChangeDetectionComponent,
     ConsumeServiceComponent
-  ],
+],
   template: `
   <!-- <router-outlet /> -->
   <!-- <app-template-binding /> -->

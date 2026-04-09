@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { NewComponent } from '../../../new-component/new-component.component';
@@ -6,7 +6,7 @@ import { NewComponent } from '../../../new-component/new-component.component';
 @Component({
   selector: 'app-template-deferrable-error',
   standalone: true,
-  imports: [CommonModule, NewComponent],
+  imports: [NewComponent],
   templateUrl: './template-deferrable-error.component.html',
   styleUrl: './template-deferrable-error.component.scss'
 })

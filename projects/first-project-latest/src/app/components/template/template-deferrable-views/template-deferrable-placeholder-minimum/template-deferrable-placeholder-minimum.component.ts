@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { NewComponent } from '../../../new-component/new-component.component';
@@ -6,7 +6,7 @@ import { NewComponent } from '../../../new-component/new-component.component';
 @Component({
   selector: 'app-template-deferrable-placeholder-minimum',
   standalone: true,
-  imports: [CommonModule, NewComponent],
+  imports: [NewComponent],
   templateUrl: './template-deferrable-placeholder-minimum.component.html',
   styleUrl: './template-deferrable-placeholder-minimum.component.scss'
 })
