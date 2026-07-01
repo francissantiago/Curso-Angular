@@ -23,7 +23,7 @@ export class HostElementsComponent {
     console.log(event);
   }
 
-  @HostListener('click', ['$event'])
+  @HostListener('click')
   public updateClick() {
     alert('Francis Santiago');
   }
