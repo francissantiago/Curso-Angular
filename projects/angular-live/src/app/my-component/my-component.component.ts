@@ -10,6 +10,7 @@ interface Drink {
 
 @Component({
   selector: 'app-my-component',
+  standalone: false,
   templateUrl: './my-component.component.html',
   styleUrl: './my-component.component.scss'
 })
